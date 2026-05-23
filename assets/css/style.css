@@ -1,0 +1,33 @@
+body{
+    scroll-behavior: smooth;
+}
+
+.hero{
+    min-height: 100vh;
+    background: #111827;
+    padding-top: 100px;
+}
+
+section{
+    padding: 80px 0;
+}
+
+.navbar{
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+footer{
+    margin-top: 50px;
+}
+.card{
+    transition: 0.3s;
+    border: none;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+.progress{
+    height: 25px;
+    border-radius: 10px;
+}
