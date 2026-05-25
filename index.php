@@ -194,58 +194,49 @@ $resultado_proyectos = mysqli_query($conn, $query_proyectos);
 
     <section id="proyectos" class="bg-light py-5">
         <div class="container py-4">
-            <h2 class="section-title">Proyectos Destacados</h2>
+            <h2 class="section-title">Proyectos Realizados</h2>
             <p class="text-muted mb-4">Proyectos técnicos desarrollados durante mi formación y práctica profesional.</p>
             
             <div class="row g-4">
-                <?php
-                if ($resultado_proyectos && mysqli_num_rows($resultado_proyectos) > 0) {
-                    while($proyecto = mysqli_fetch_assoc($resultado_proyectos)) {
-                        // Si el proyecto en la BD tiene imagen la usa, si no, usa proyecto.jpg por defecto
-                        $imagen = !empty($proyecto['imagen']) ? $proyecto['imagen'] : 'assets/img/proyecto.jpg';
-                        ?>
-                        <div class="col-md-4">
-                            <div class="card h-100 overflow-hidden shadow-sm">
-                                <img src="<?php echo $imagen; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($proyecto['titulo']); ?>" style="height: 200px; object-fit: cover;">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title fw-bold"><?php echo htmlspecialchars($proyecto['titulo']); ?></h5>
-                                    <p class="card-text text-muted small flex-grow-1"><?php echo htmlspecialchars($proyecto['descripcion']); ?></p>
-                                    <div class="d-flex gap-2 mt-3">
-                                        <?php if(!empty($proyecto['github'])): ?>
-                                            <a href="<?php echo $proyecto['github']; ?>" target="_blank" class="btn btn-outline-dark btn-sm flex-fill"><i class="fab fa-github me-1"></i> GitHub</a>
-                                        <?php endif; ?>
-                                        <?php if(!empty($proyecto['demo'])): ?>
-                                            <a href="<?php echo $proyecto['demo']; ?>" target="_blank" class="btn btn-info btn-sm flex-fill text-white" style="background-color: #38bdf8; border: none;"><i class="fa-solid fa-rocket me-1"></i> Demo</a>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php
-                    }
-                } else {
-                    ?>
-                    <div class="col-md-6">
-                        <div class="card h-100 overflow-hidden shadow-sm">
-                            <img src="assets/img/proyecto.jpg" class="card-img-top" alt="Sistema de Gestión" style="height: 200px; object-fit: cover;">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Sistema Autónomo de Gestión de Proyectos (CRUD)</h5>
-                                <p class="card-text text-muted">Aplicación web dinámica desarrollada en arquitectura PHP nativo y MySQL. Permite la administración integral de proyectos en tiempo real mediante un panel con autenticación segura de usuarios.</p>
+                <div class="col-md-4">
+                    <div class="card h-100 overflow-hidden shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Interfaz Web con Bootstrap" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Interfaz Web con Implementación de Bootstrap</h5>
+                            <p class="card-text text-muted small flex-grow-1">Página web interactiva construida bajo metodologías Mobile-First utilizando componentes y grillas nativas de Bootstrap para garantizar compatibilidad multidispositivo autónoma.</p>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="https://github.com/benjagonzza/portafolio-web" target="_blank" class="btn btn-outline-dark btn-sm flex-fill"><i class="fab fa-github me-1"></i> GitHub</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card h-100 overflow-hidden shadow-sm">
-                            <img src="assets/img/proyecto.jpg" class="card-img-top" alt="Portafolio Profesional" style="height: 200px; object-fit: cover;">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Plataforma Portafolio Web Autogestionable</h5>
-                                <p class="card-text text-muted">Sitio web profesional completamente responsivo estructurado con Bootstrap 5 y conectado dinámicamente al backend. Consume los datos de la base para renderizar la información en tiempo real.</p>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 overflow-hidden shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Gestor de Tareas Dinámico" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Taller 2: Gestor de Tareas Dinámico</h5>
+                            <p class="card-text text-muted small flex-grow-1">Proyecto práctico enfocado en el diseño, estilización e interactividad web. Permite la creación y control de flujos de trabajo locales combinando lógica frontend estructurada.</p>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="https://github.com/benjagonzza/portafolio-web" target="_blank" class="btn btn-outline-dark btn-sm flex-fill"><i class="fab fa-github me-1"></i> GitHub</a>
                             </div>
                         </div>
                     </div>
-                    <?php
-                }
-                ?>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 overflow-hidden shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Portafolio Web Profesional" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Portafolio Web Profesional Autoadministrable</h5>
+                            <p class="card-text text-muted small flex-grow-1">Aplicación web moderna, responsive y funcional que permite presentar información profesional mediante un sistema dinámico desarrollado con PHP, arquitectura de bases de datos y MySQL.</p>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="https://github.com/benjagonzza/portafolio-web" target="_blank" class="btn btn-outline-dark btn-sm flex-fill"><i class="fab fa-github me-1"></i> GitHub</a>
+                                <a href="https://teclab.uct.cl/~bgonzalez2025/" target="_blank" class="btn btn-info btn-sm flex-fill text-white" style="background-color: #38bdf8; border: none;"><i class="fa-solid fa-rocket me-1"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
