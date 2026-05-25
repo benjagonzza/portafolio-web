@@ -19,13 +19,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $github = $_POST['github'];
     $demo = $_POST['demo'];
 
-    $update = "UPDATE proyectos SET
-
+   $update = "UPDATE proyectos SET 
     titulo='$titulo',
     descripcion='$descripcion',
     github='$github',
-    demo='$demo'
-
+    demo='$demo' 
     WHERE id=$id";
 
     mysqli_query($conn, $update);
