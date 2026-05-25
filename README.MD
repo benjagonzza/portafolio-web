@@ -38,8 +38,7 @@ Permite administrar un portafolio profesional con sistema de login, dashboard y 
 ---
 
 ## Enlace a producción
-http://localhost/portafolio-web
-(Después reemplazar por servidor TECLA)
+https://teclab.uct.cl/~bgonzalez2025/
 
 ---
 
